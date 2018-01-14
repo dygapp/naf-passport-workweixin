@@ -7,4 +7,5 @@ run/
 .DS_Store
 *.swp
 package-lock.json
-
+.travis.yml
+appveyor.yml

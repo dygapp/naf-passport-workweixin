@@ -1,3 +1,7 @@
 {
-  "extends": "eslint-config-egg"
+  "extends": "eslint-config-egg",
+  "rules": {
+    "valid-jsdoc": "off",
+    "no-unused-vars": ["warn", { "vars": "local", "varsIgnorePattern": "^_" }]
+  }
 }

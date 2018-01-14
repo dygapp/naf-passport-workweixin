@@ -2,9 +2,13 @@
 
 /**
  * egg-naf-passsport-workweixin default config
- * @member Config#nafPasssportWorkweixin
+ * @member Config#passsportWorkweixin
  * @property {String} SOME_KEY - some description
  */
-exports.nafPasssportWorkweixin = {
-
+exports.passsportWorkweixin = {
+  key: '', // corp id
+  secret: '',
+  agentId: 0,
+  callbackURL: '/passport/workweixin/callback',
+  skipUserProfile: true,
 };
