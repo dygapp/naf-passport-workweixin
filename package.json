@@ -1,6 +1,6 @@
 {
   "name": "naf-passsport-workweixin",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "egg-passsport plugin for work weixin",
   "eggPlugin": {
     "name": "passportWorkweixin",
