@@ -14,8 +14,8 @@ module.exports = app => {
   assert(config.secret, '[naf-passport-wxwork] config.passportWxwork.secret required');
   assert(config.agentid, '[naf-passport-wxwork] config.passportWxwork.agentid required');
 
-  config.appid = config.key;
-  config.corpSecret = config.secret;
+  config.corpid = config.key;
+  config.corpsecret = config.secret;
 
   config.requireState = false;
 
@@ -24,32 +24,36 @@ module.exports = app => {
   /**
    * 获取用户的回调
    */
-  app.passport.use('wxwork', new Strategy(config, (req, accessToken, ticket, params, profile, done) => {
+  app.passport.use('wxwork', new Strategy(config, (req, accessToken, profile, done) => {
     // format user
     const user = {
       provider: 'wxwork',
-      // id: profile.id,
-      // name: profile.username,
-      // displayName: profile.displayName,
-      // photo: profile.photo,
+      userid: profile.UserId,
       // accessToken,
       // ticket,
-      profile,
     };
-
-    // {
-    //   "errcode": 0,
-    //   "errmsg": "ok",
-    //   "UserId":"USERID",
-    //   "DeviceId":"DEVICEID",
-    //   "user_ticket": "USER_TICKET"，
-    //   "expires_in":7200
-    // }
 
     debug('%s %s get user: %j', req.method, req.url, user);
 
     // let passport do verify and call verify hook
     app.passport.doVerify(req, user, done);
-  }))
-  ;
+  }));
+
+  // 处理用户信息钩子函数
+  // app.passport.verify(async (ctx, user) => {
+  //   console.log('***************  app.passport.verify  ********************');
+  //   console.log(user);
+  //   return user;
+  // });
+  // app.passport.serializeUser(async (ctx, user) => {
+  //   console.log('***************  app.passport.serializeUser  ********************');
+  //   console.log(user);
+  //   return user;
+  // });
+  // app.passport.deserializeUser(async (ctx, user) => {
+  //   console.log('***************  app.passport.deserializeUser  ********************');
+  //   console.log(user);
+  //   return user;
+  // });
+
 };

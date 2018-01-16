@@ -9,6 +9,6 @@ exports.passsportWorkweixin = {
   key: '', // corp id
   secret: '',
   agentId: 0,
-  callbackURL: '/passport/workweixin/callback',
+  // callbackURL: '/passport/wxwork/callback',
   skipUserProfile: true,
 };

@@ -1,9 +1,9 @@
 {
-  "name": "naf-passsport-wxwork",
+  "name": "naf-passport-wxwork",
   "version": "0.0.1",
-  "description": "egg-passsport plugin for work weixin",
+  "description": "egg-passport plugin for work weixin",
   "eggPlugin": {
-    "name": "passportWorkweixin",
+    "name": "passportWxwork",
     "dependencies": [
       "passport"
     ]
@@ -14,10 +14,13 @@
     "egg-plugin"
   ],
   "dependencies": {
+    "axios": "^0.17.1",
     "naf-core": "0.0.3",
     "passport": "^0.4.0",
     "passport-oauth2": "^1.4.0",
-    "passport-strategy": "^1.0.0"
+    "passport-strategy": "^1.0.0",
+    "url": "^0.11.0",
+    "utils-merge": "^1.0.1"
   },
   "devDependencies": {
     "autod": "^3.0.0",
@@ -52,12 +55,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-naf-passsport-workweixin.git"
+    "url": "git+https://github.com/dygapp/naf-passsport-wxwork.git"
   },
   "bugs": {
     "url": "https://github.com/eggjs/egg/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-naf-passsport-workweixin#readme",
+  "homepage": "https://github.com/dygapp/naf-passsport-wxwork#readme",
   "author": "dygapp@qq.com",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
 }
