@@ -1,6 +1,6 @@
 {
   "name": "naf-passport-wxwork",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "egg-passport plugin for work weixin",
   "eggPlugin": {
     "name": "passportWxwork",
@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "axios": "^0.17.1",
-    "naf-core": "0.0.3",
+    "naf-core": "^0.0.3",
     "passport": "^0.4.0",
     "passport-oauth2": "^1.4.0",
     "passport-strategy": "^1.0.0",
@@ -48,7 +48,8 @@
   "files": [
     "app.js",
     "agent.js",
-    "config"
+    "config",
+    "lib"
   ],
   "ci": {
     "version": "8, 9"
